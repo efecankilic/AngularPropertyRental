@@ -1,0 +1,14 @@
+<div class="bookings-container">
+    <h2>Your Bookings</h2>
+    <ul class="booking-list">
+      <li *ngFor="let booking of bookings" class="booking-item">
+        <div>
+          <p><strong>Property:</strong> {{ booking.property.title }}</p>
+          <p><strong>Check-in:</strong> {{ booking.startDate | date: 'medium' }}</p>
+          <p><strong>Check-out:</strong> {{ booking.endDate | date: 'medium' }}</p>
+        </div>
+        <button class="cancel-button" (click)="cancelBooking(booking._id)">Cancel Booking</button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,25 @@
+<div class="container">
+  
+  <h1 class="page-title">Explore Properties</h1>
+
+  <div class="search-bar">
+    <mat-form-field class="search-field">
+      <input matInput placeholder="Search Properties" [(ngModel)]="searchTerm" />
+    </mat-form-field>
+  </div>
+
+  <div class="property-list">
+    <div class="property-card" *ngFor="let property of filteredProperties" (click)="viewDetails(property._id)">
+      <div class="property-image">
+        <img src="{{ property.image }}" alt="Property Image" (error)="onImageError(property)" />
+      </div>
+      <div class="property-details">
+        <h2 class="property-title">{{ property.title }}</h2>
+        <p class="property-summary">{{ property.city }}, {{property.country }}</p>
+        <p class="property-rate">Daily Rate: {{ property.dailyRate | currency }}</p>
+        <button mat-raised-button color="#fff000" (click)="viewDetails(property._id)">View Details</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

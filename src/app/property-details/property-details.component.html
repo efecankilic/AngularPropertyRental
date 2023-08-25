@@ -1,0 +1,48 @@
+<div class="property-details-container">
+  <div class="property-image">
+    <img [src]="property?.image" alt="Property Image" (error)="onImageError()" />
+  </div>
+  <div class="property-details">
+    <h1 class="property-title">{{ property?.title }}</h1>
+    <p class="property-location">{{ property?.city }}, {{ property?.country }}</p>
+    <div class="property-rating">
+      <span class="rating">{{ property?.rating }}</span>
+      <span class="star">&#9733;</span>
+    </div>
+    <hr>
+    <div class="property-specs">
+      <p>
+        {{ property?.bedrooms }} Bedrooms &bull;
+        {{ property?.bathrooms }} Bathrooms
+      </p>
+      <p>Max Guests: {{ property?.maxGuests }}</p>
+    </div>
+    <div class="property-amenities">
+      <p>Amenities:</p>
+      <div class="amenities-list">
+        <ng-container *ngFor="let amenity of property?.amenities; let last = last">
+          <span class="amenity">{{ amenity }}</span><span *ngIf="!last">,</span>
+        </ng-container>
+      </div>
+    </div>
+    <hr>
+    <p class="property-description">{{ property?.description }}</p>
+    <div class="property-booking">
+      <h2>Book Now</h2>
+      <form [formGroup]="bookingForm">
+        <mat-form-field>
+          <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" formControlName="startDate" required>
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" formControlName="endDate" required>
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" (click)="bookProperty()">Book Now</button>
+      </form>
+    </div>
+  </div>

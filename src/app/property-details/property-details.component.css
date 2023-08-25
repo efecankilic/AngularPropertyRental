@@ -1,0 +1,93 @@
+.property-details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .property-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-details {
+    max-width: 600px;
+    margin-left: 30px;
+  }
+  
+  .property-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .property-location {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .property-rating {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #f4c542;
+    margin-top: 10px;
+  }
+  
+  .star {
+    margin-left: 5px;
+    font-size: 24px;
+    color: #f4c542;
+  }
+  
+  .property-summary {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #444;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .amenity-chip {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+  
+  .reserve-button {
+    margin-top: 20px;
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .reserve-button:hover {
+    background-color: #e0484e;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
